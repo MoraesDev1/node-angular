@@ -1,0 +1,105 @@
+{
+  "produtoGrupo": [
+    {
+      "id": 1,
+      "nome": "nome_produto_grupo_1",
+      "descricao": "descricao_produto_grupo_1"
+    },
+    {
+      "id": 2,
+      "nome": "nome_produto_grupo_2",
+      "descricao": "descricao_produto_grupo_2"
+    },
+    {
+      "id": 3,
+      "nome": "nome_produto_grupo_3",
+      "descricao": "descricao_produto_grupo_3"
+    }
+  ],
+  "produtoSubgrupo": [
+    {
+      "id": 1,
+      "idProdutoGrupo": 1,
+      "nome": "SubGrupo 01",
+      "descricao": "descrição generica para subgrupo"
+    },
+    {
+      "idProdutoGrupo": 1,
+      "nome": "SubGrupo 02",
+      "descricao": "descrição generica para subgrupo",
+      "id": 2
+    },
+    {
+      "idProdutoGrupo": 1,
+      "nome": "SubGrupo 03",
+      "descricao": "descrição generica para subgrupo",
+      "id": 3
+    }
+  ],
+  "produtoUnidade": [
+    {
+      "id": 1,
+      "sigla": "sigla_produto_unidade_1",
+      "descricao": "descricao_produto_unidade_1"
+    },
+    {
+      "id": 2,
+      "sigla": "sigla_produto_unidade_2",
+      "descricao": "descricao_produto_unidade_2"
+    },
+    {
+      "id": 3,
+      "sigla": "sigla_produto_unidade_3",
+      "descricao": "descricao_produto_unidade_3"
+    }
+  ],
+  "produtoMarca": [
+    {
+      "id": 1,
+      "nome": "nome_produto_marca_1",
+      "descricao": "descricao_produto_marca_1"
+    },
+    {
+      "id": 2,
+      "nome": "nome_produto_marca_2",
+      "descricao": "descricao_produto_marca_2"
+    },
+    {
+      "id": 3,
+      "nome": "nome_produto_marca_3",
+      "descricao": "descricao_produto_marca_3"
+    }
+  ],
+  "produto": [
+    {
+      "id": 1,
+      "idProdutoSubgrupo": 1,
+      "idProdutoMarca": 1,
+      "idProdutoUnidade": 1,
+      "nome": "nome_produto_1",
+      "gtin": "gtin_produto_1",
+      "valor": 0.01,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 2,
+      "idProdutoSubgrupo": 2,
+      "idProdutoMarca": 2,
+      "idProdutoUnidade": 2,
+      "nome": "nome_produto_2",
+      "gtin": "gtin_produto_2",
+      "valor": 0.02,
+      "dataCadastro": "2024-06-12"
+    },
+    {
+      "id": 3,
+      "idProdutoSubgrupo": 3,
+      "idProdutoMarca": 3,
+      "idProdutoUnidade": 3,
+      "nome": "nome_produto_3",
+      "gtin": "gtin_produto_3",
+      "valor": 0.03,
+      "dataCadastro": "2024-06-13"
+    }
+  ]
+}
