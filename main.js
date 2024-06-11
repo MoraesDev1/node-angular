@@ -366,6 +366,7 @@ app.put('/group/:id', (req, res) => {
 app.delete('/group/:id', (req, res) => {
     const groupId = parseInt(req.params.id);
     const index = database.produtoGrupo.findIndex(group => group.id === groupId);
+
     if (index !== -1) {
         database.produtoGrupo.splice(index, 1);
         fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
@@ -377,6 +378,200 @@ app.delete('/group/:id', (req, res) => {
         });
     } else {
         res.status(404).send('Grupo não encontrado');
+    }
+});
+
+// TABELA UNIDADE
+app.get('/unit', (req, res) => {
+    res.json(database.produtoUnidade);
+});
+
+app.get('/unit/:id', (req, res) => {
+    const unitId = parseInt(req.params.id);
+    const unit = database.produtoUnidade.find(unit => unit.id === unitId);
+
+    if (unit) {
+        res.json(unit);
+    } else {
+        res.status(404).send('Unidade não encontrada.');
+    }
+});
+
+app.post('/unit', (req, res) => {
+    const newUnit = req.body;
+    // verificando se foram passados todos os atributos
+    if (newUnit.sigla == null) {
+        return res.status(400).send({ error: 'Sigla não informada.' });
+    }
+    if (newUnit.descricao == null) {
+        return res.status(400).send({ error: 'Descrição não informada.' });
+    }
+
+    //verificando se os atributos não estão vazios
+    if (newUnit.sigla.length === 0) {
+        return res.status(400).send({ error: 'Sigla não pode ser vazio.' });
+    }
+    if (newUnit.descricao.length === 0) {
+        return res.status(400).send({ error: 'Descrição não pode ser vazio.' });
+    }
+
+    newUnit.id = getNextId('produtoUnidade');
+    database.produtoUnidade.push(newUnit);
+    fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+        if (err) {
+            res.status(500).send('Erro ao salvar dados.');
+        } else {
+            res.status(201).json(newUnit);
+        }
+    });
+});
+
+app.put('/unit/:id', (req, res) => {
+    const unitId = parseInt(req.params.id);
+    const updateUnit = req.body;
+    const index = database.produtoUnidade.findIndex(unit => unit.id === unitId);
+
+    if (updateUnit.sigla == null) {
+        return res.status(400).send({ error: 'Sigla não informada.' });
+    }
+    if (updateUnit.descricao == null) {
+        return res.status(400).send({ error: 'Descrição não informado.' });
+    }
+
+    //verificando se os atributos não estão vazios
+    if (updateUnit.sigla.length === 0) {
+        return res.status(400).send({ error: 'Nome não pode ser vazio.' });
+    }
+    if (updateUnit.descricao.length === 0) {
+        return res.status(400).send({ error: 'Descrição não pode ser vazio.' });
+    }
+
+    if (index !== -1) {
+        database.produtoUnidade[index] = { ...database.produtoUnidade[index], ...updateUnit };
+        fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+            if (err) {
+                res.status(500).send('Erro ao salvar dados.');
+            } else {
+                res.status(201).json(updateUnit);
+            }
+        });
+    } else {
+        res.status(404).send('Unidade não encontrada.');
+    }
+});
+
+app.delete('/unit/:id', (req, res) => {
+    const unitId = parseInt(req.params.id);
+    const index = database.produtoUnidade.findIndex(unit => unit.id === unitId);
+
+    if (index !== -1) {
+        database.produtoUnidade.splice(index, 1);
+        fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+            if (err) {
+                res.status(500).send('Erro ao salvar dados.');
+            } else {
+                res.status(201).send('Unidade deletada.');
+            }
+        });
+    } else {
+        res.status(404).send('Unidade não encontrada.');
+    }
+});
+
+// TABELA MARCA
+app.get('/brand', (req, res) => {
+    res.json(database.produtoMarca);
+});
+
+app.get('/brand/:id', (req, res) => {
+    const brandId = parseInt(req.params.id);
+    const brand = database.produtoMarca.find(brand => brand.id === unitId);
+
+    if (brand) {
+        res.json(brand);
+    } else {
+        res.status(404).send('Marca não encontrada.');
+    }
+});
+
+app.post('/brand', (req, res) => {
+    const newBrand = req.body;
+    // verificando se foram passados todos os atributos
+    if (newBrand.nome == null) {
+        return res.status(400).send({ error: 'Nome não informado.' });
+    }
+    if (newBrand.descricao == null) {
+        return res.status(400).send({ error: 'Descrição não informada.' });
+    }
+
+    //verificando se os atributos não estão vazios
+    if (newBrand.nome.length === 0) {
+        return res.status(400).send({ error: 'Nome não pode ser vazio.' });
+    }
+    if (newBrand.descricao.length === 0) {
+        return res.status(400).send({ error: 'Descrição não pode ser vazio.' });
+    }
+
+    newBrand.id = getNextId('produtoMarca');
+    database.produtoMarca.push(newBrand);
+    fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+        if (err) {
+            res.status(500).send('Erro ao salvar dados.');
+        } else {
+            res.status(201).json(newBrand);
+        }
+    });
+});
+
+app.put('/brand/:id', (req, res) => {
+    const brandId = parseInt(req.params.id);
+    const updateBrand = req.body;
+    const index = database.produtoMarca.findIndex(brand => brand.id === brandId);
+
+    if (updateBrand.nome == null) {
+        return res.status(400).send({ error: 'Nome não informado.' });
+    }
+    if (updateBrand.descricao == null) {
+        return res.status(400).send({ error: 'Descrição não informado.' });
+    }
+
+    //verificando se os atributos não estão vazios
+    if (updateBrand.nome.length === 0) {
+        return res.status(400).send({ error: 'Nome não pode ser vazio.' });
+    }
+    if (updateBrand.descricao.length === 0) {
+        return res.status(400).send({ error: 'Descrição não pode ser vazio.' });
+    }
+
+    if (index !== -1) {
+        database.produtoMarca[index] = { ...database.produtoMarca[index], ...updateBrand };
+        fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+            if (err) {
+                res.status(500).send('Erro ao salvar dados.');
+            } else {
+                res.status(201).json(updateBrand);
+            }
+        });
+    } else {
+        res.status(404).send('Marca não encontrada.');
+    }
+});
+
+app.delete('/brand/:id', (req, res) => {
+    const brandId = parseInt(req.params.id);
+    const index = database.produtoMarca.findIndex(brand => brand.id === brandId);
+
+    if (index !== -1) {
+        database.produtoMarca.splice(index, 1);
+        fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
+            if (err) {
+                res.status(500).send('Erro ao salvar dados.');
+            } else {
+                res.status(201).send('Marca deletada.');
+            }
+        });
+    } else {
+        res.status(404).send('Marca não encontrada.');
     }
 });
 
