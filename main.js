@@ -382,7 +382,7 @@ app.delete('/group/:id', (req, res) => {
 });
 
 // TABELA UNIDADE
-app.get('/brand', (req, res) => {
+app.get('/unit', (req, res) => {
     res.json(database.produtoUnidade);
 });
 
@@ -397,7 +397,7 @@ app.get('/unit/:id', (req, res) => {
     }
 });
 
-app.post('/brand', (req, res) => {
+app.post('/unit', (req, res) => {
     const newUnit = req.body;
     // verificando se foram passados todos os atributos
     if (newUnit.sigla == null) {
@@ -505,7 +505,7 @@ app.post('/brand', (req, res) => {
     }
 
     //verificando se os atributos não estão vazios
-    if (newBrand.sigla.length === 0) {
+    if (newBrand.nome.length === 0) {
         return res.status(400).send({ error: 'Nome não pode ser vazio.' });
     }
     if (newBrand.descricao.length === 0) {
@@ -513,7 +513,7 @@ app.post('/brand', (req, res) => {
     }
 
     newBrand.id = getNextId('produtoMarca');
-    database.produtoUnidade.push(newBrand);
+    database.produtoMarca.push(newBrand);
     fs.writeFile('./database.json', JSON.stringify(database, null, 2), (err) => {
         if (err) {
             res.status(500).send('Erro ao salvar dados.');
