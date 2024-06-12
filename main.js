@@ -3,8 +3,11 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 const PORT = 3000;
+const cors = require('cors');
 
 app.use(bodyParser.json());
+app.use(cors());
+
 let idCounters = require("./idCounters.json");
 let database = require("./database.json");
 const { error } = require('console');
