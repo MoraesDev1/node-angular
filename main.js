@@ -280,7 +280,7 @@ app.delete('/subgroup/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).send('Subgrupo detelado');
+                res.status(200).send('Subgrupo detelado');
             }
         });
     } else {
