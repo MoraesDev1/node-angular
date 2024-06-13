@@ -155,7 +155,7 @@ app.put('/product/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).json(updateProduct);
+                res.status(200).json(updateProduct);
             }
         });
     } else {
@@ -172,7 +172,7 @@ app.delete('/product/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).send('Produto detelado');
+                res.status(200).send('Produto detelado');
             }
         });
     } else {
@@ -263,7 +263,7 @@ app.put('/subgroup/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).json(updateSubgroup);
+                res.status(200).json(updateSubgroup);
             }
         });
     } else {
@@ -358,7 +358,7 @@ app.put('/group/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).json(updateGroup);
+                res.status(200).json(updateGroup);
             }
         });
     } else {
@@ -376,7 +376,7 @@ app.delete('/group/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).send('Grupo detelado');
+                res.status(200).send('Grupo detelado');
             }
         });
     } else {
@@ -455,7 +455,7 @@ app.put('/unit/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).json(updateUnit);
+                res.status(200).json(updateUnit);
             }
         });
     } else {
@@ -473,7 +473,7 @@ app.delete('/unit/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).send('Unidade deletada.');
+                res.status(200).send('Unidade deletada.');
             }
         });
     } else {
@@ -552,7 +552,7 @@ app.put('/brand/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).json(updateBrand);
+                res.status(200).json(updateBrand);
             }
         });
     } else {
@@ -570,7 +570,7 @@ app.delete('/brand/:id', (req, res) => {
             if (err) {
                 res.status(500).send('Erro ao salvar dados.');
             } else {
-                res.status(201).send('Marca deletada.');
+                res.status(200).send('Marca deletada.');
             }
         });
     } else {
