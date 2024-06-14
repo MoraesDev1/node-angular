@@ -2,72 +2,108 @@
   "produtoGrupo": [
     {
       "id": 1,
-      "nome": "nome_produto_grupo_1",
-      "descricao": "descricao_produto_grupo_1"
+      "nome": "camiseta",
+      "descricao": "peça de vestuário de manga curta, usada para cobrir o tronco"
     },
     {
       "id": 2,
-      "nome": "nome_produto_grupo_2",
-      "descricao": "descricao_produto_grupo_2"
+      "nome": "calça",
+      "descricao": "peça de vestuário usada para cobrir as pernas"
     },
     {
       "id": 3,
-      "nome": "nome_produto_grupo_3",
-      "descricao": "descricao_produto_grupo_3"
+      "nome": "casaco",
+      "descricao": "peça de vestuário de manga longa, usada para cobrir o tronco"
     }
   ],
   "produtoSubgrupo": [
     {
       "id": 1,
       "idProdutoGrupo": 1,
-      "nome": "SubGrupo 01",
-      "descricao": "descrição generica para subgrupo"
+      "nome": "clássica",
+      "descricao": "camiseta que apresenta mangas curtas e decote redondo"
     },
     {
+      "id": 2,
       "idProdutoGrupo": 1,
-      "nome": "SubGrupo 02",
-      "descricao": "descrição generica para subgrupo",
-      "id": 2
+      "nome": "regata",
+      "descricao": "camiseta que não apresenta mangas e comprimento variado"
     },
     {
+      "id": 3,
       "idProdutoGrupo": 1,
-      "nome": "SubGrupo 03",
-      "descricao": "descrição generica para subgrupo",
-      "id": 3
+      "nome": "polo",
+      "descricao": "camiseta que apresenta gola e abertura frontal com botões"
+    },
+    {
+      "id": 4,
+      "idProdutoGrupo": 2,
+      "nome": "jeans",
+      "descricao": "tecido de denim, fechamento com zíper e botão"
+    },
+    {
+      "id": 5,
+      "idProdutoGrupo": 2,
+      "nome": "moletom",
+      "descricao": "tecido macio de moletom, fechamento com cordão ou elástico"
+    },
+    {
+      "id": 6,
+      "idProdutoGrupo": 2,
+      "nome": "sarja",
+      "descricao": "tecido de sarja, fechamento com presilhas"
+    },
+    {
+      "id": 7,
+      "idProdutoGrupo": 3,
+      "nome": "jaqueta",
+      "descricao": "casaco curto, com punhos e cintura de elástico, fechamento com zíper"
+    },
+    {
+      "id": 8,
+      "idProdutoGrupo": 3,
+      "nome": "sobretudo",
+      "descricao": "casaco longo, da lã ou cashmere, fechamento com botões"
+    },
+    {
+      "id": 9,
+      "idProdutoGrupo": 3,
+      "nome": "corta-vento",
+      "descricao": "feito de nylon ou poliéster, resistente a água e vento, fechamento com zíper"
     }
   ],
   "produtoUnidade": [
     {
       "id": 1,
-      "sigla": "sigla_produto_unidade_1",
-      "descricao": "descricao_produto_unidade_1"
+      "sigla": "P",
+      "descricao": "tamanho pequeno"
     },
     {
       "id": 2,
-      "sigla": "sigla_produto_unidade_2",
-      "descricao": "descricao_produto_unidade_2"
+      "sigla": "M",
+      "descricao": "tamanho médio"
     },
     {
       "id": 3,
-      "sigla": "sigla_produto_unidade_3",
-      "descricao": "descricao_produto_unidade_3"
+      "sigla": "G",
+      "descricao": "tamanho grande"
     }
   ],
   "produtoMarca": [
     {
       "id": 1,
-      "nome": "nome_produto_marca_1",
-      "descricao": "descricao_produto_marca_1"
+      "nome": "adidas",
+      "descricao": "moda esportiva e estilosa"
     },
     {
       "id": 2,
-      "nome": "nome_produto_marca_2",
-      "descricao": "descricao_produto_marca_2"
+      "nome": "nike",
+      "descricao": "moda esportiva e tecnológica"
     },
     {
       "id": 3,
-      "nome": "nome_produto_marca_3",
-      "descricao": "descricao_produto_marca_3"
+      "nome": "polo wear",
+      "descricao": "moda casual e confortável"
     }
   ],
   "produto": [
@@ -76,9 +112,9 @@
       "idProdutoSubgrupo": 1,
       "idProdutoMarca": 1,
       "idProdutoUnidade": 1,
-      "nome": "nome_produto_1",
-      "gtin": "gtin_produto_1",
-      "valor": 0.01,
+      "nome": "Camiseta Básica de Algodão",
+      "gtin": "7893456789012",
+      "valor": 29.99,
       "dataCadastro": "2024-06-11"
     },
     {
@@ -86,20 +122,80 @@
       "idProdutoSubgrupo": 2,
       "idProdutoMarca": 2,
       "idProdutoUnidade": 2,
-      "nome": "nome_produto_2",
-      "gtin": "gtin_produto_2",
-      "valor": 0.02,
-      "dataCadastro": "2024-06-12"
+      "nome": "Camiseta Regata Fitness",
+      "gtin": "7892345678901",
+      "valor": 39.99,
+      "dataCadastro": "2024-06-11"
     },
     {
       "id": 3,
       "idProdutoSubgrupo": 3,
       "idProdutoMarca": 3,
       "idProdutoUnidade": 3,
-      "nome": "nome_produto_3",
-      "gtin": "gtin_produto_3",
-      "valor": 0.03,
-      "dataCadastro": "2024-06-13"
+      "nome": "Camiseta Polo Casual",
+      "gtin": "7891234567890",
+      "valor": 59.99,
+      "dataCadastro": "2024-06-111"
+    },
+    {
+      "id": 4,
+      "idProdutoSubgrupo": 4,
+      "idProdutoMarca": 1,
+      "idProdutoUnidade": 1,
+      "nome": "Calça Jeans Skinny",
+      "gtin": "7891234567890",
+      "valor": 99.99,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 5,
+      "idProdutoSubgrupo": 5,
+      "idProdutoMarca": 2,
+      "idProdutoUnidade": 2,
+      "nome": "Calça Moletom Jogger",
+      "gtin": "7892345678901",
+      "valor": 69.99,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 6,
+      "idProdutoSubgrupo": 6,
+      "idProdutoMarca": 3,
+      "idProdutoUnidade": 3,
+      "nome": "Calça Sarja Slim Fit",
+      "gtin": "7890123456789",
+      "valor": 89.99,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 7,
+      "idProdutoSubgrupo": 7,
+      "idProdutoMarca": 1,
+      "idProdutoUnidade": 1,
+      "nome": "Jaqueta Bomber Moderna",
+      "gtin": "7891234567890",
+      "valor": 129.99,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 8,
+      "idProdutoSubgrupo": 8,
+      "idProdutoMarca": 2,
+      "idProdutoUnidade": 2,
+      "nome": "Casaco Sobretudo Clássico",
+      "gtin": "7890123456789",
+      "valor": 199.99,
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 9,
+      "idProdutoSubgrupo": 9,
+      "idProdutoMarca": 3,
+      "idProdutoUnidade": 3,
+      "nome": "Casaco Corta-vento Esportivo",
+      "gtin": "7892345678901",
+      "valor": 79.99,
+      "dataCadastro": "2024-06-11"
     }
   ]
 }
